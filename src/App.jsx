@@ -1,10 +1,17 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Header } from "./components";
 
 const App = () => {
     return (
-        <div>
-        </div>
+        <>
+        <Router>
+            <Header />
+            <Switch>
+                <Route exact path='/' />
+            </Switch>
+        </Router>
+        </>
     );
 }
 
