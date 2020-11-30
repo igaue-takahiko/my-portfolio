@@ -29,12 +29,17 @@ const Header = () => {
                         </li>
                         <li className="header__item">
                             <Link className="header__links" to="/" onClick={closeModalMenu}>
-                                Skill
+                                About
                             </Link>
                         </li>
                         <li className="header__item">
                             <Link className="header__links" to="/" onClick={closeModalMenu}>
-                                Performance
+                                Skills
+                            </Link>
+                        </li>
+                        <li className="header__item">
+                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                                Works
                             </Link>
                         </li>
                     </ul>
