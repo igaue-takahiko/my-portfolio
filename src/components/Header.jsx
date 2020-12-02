@@ -28,17 +28,17 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <Link className="header__links" to="/about" onClick={closeModalMenu}>
                                 About
                             </Link>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <Link className="header__links" to="/skills" onClick={closeModalMenu}>
                                 Skills
                             </Link>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <Link className="header__links" to="/works" onClick={closeModalMenu}>
                                 Works
                             </Link>
                         </li>
