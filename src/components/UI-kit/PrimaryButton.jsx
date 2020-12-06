@@ -19,7 +19,7 @@ const PrimaryButton = (props) => {
     const classes = useStyle()
 
     return (
-        <Button className={classes.button} variant="contained"  onClick={() => props.onClick}>
+        <Button className={classes.button} variant="contained" data-aos={props.dataAos} onClick={() => props.onClick}>
             {props.label}
         </Button>
     )

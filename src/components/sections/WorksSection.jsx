@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
+import Aos from 'aos';
 
 import { CardItem } from '../UI-kit';
 
@@ -39,7 +40,15 @@ const useStyles = makeStyles(() => ({
 }))
 
 const WorksSection = () => {
-    const classes = useStyles()
+    const classes = useStyles();
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1800,
+            offset: 0,
+            anchorPlacement: "center-center",
+        })
+    },[])
 
     return (
         <div className={classes.cards}>
@@ -57,24 +66,28 @@ const WorksSection = () => {
                         <CardItem
                             src="/images/img-8.jpg" label="todo list"
                             text="TODO リストです"
-                            path="/"
+                            siteHref="https://google.com"
+                            githubHref="https://google.com"
                         />
                         <CardItem
                             src="/images/my-portfolio.jpeg" label="my portfolio"
                             text="React+Firebaseで制作した自分のポートフォリオサイトです！"
-                            path="/"
+                            siteHref="https://google.com"
+                            githubHref="https://github.com/igaue-takahiko/my-portfolio"
                         />
                     </ul>
                     <ul className={classes.cardsItems}>
                         <CardItem
                             src="/images/img-8.jpg" label="todo list"
                             text="TODO リストです TODO リストです TODO リストです"
-                            path="/"
+                            siteHref="https://google.com"
+                            githubHref=""
                         />
                         <CardItem
                             src="/images/img-8.jpg" label="todo list"
                             text="TODO リストです TODO リストです TODO リストです"
-                            path="/"
+                            siteHref="https://google.com"
+                            githubHref="https://google.com"
                         />
                     </ul>
                 </div>
