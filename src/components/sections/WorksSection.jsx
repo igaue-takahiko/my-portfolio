@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
-import Aos from 'aos';
 
 import { CardItem } from '../UI-kit';
 
 const useStyles = makeStyles(() => ({
-    cards: {
+    section: {
         padding: "4rem",
         background: "#fff"
     },
     title: {
         textAlign: "center"
     },
-    driver: {
+    divider: {
         width: 100,
         margin: "0 auto",
         color: "#6B6C6B",
@@ -42,32 +41,24 @@ const useStyles = makeStyles(() => ({
 const WorksSection = () => {
     const classes = useStyles();
 
-    useEffect(() => {
-        Aos.init({
-            duration: 1800,
-            offset: 0,
-            anchorPlacement: "center-center",
-        })
-    },[])
-
     return (
-        <div className={classes.cards}>
+        <div className={classes.section}>
             <h1 className={classes.title}>Works</h1>
-            <Divider className={classes.driver} />
+            <Divider className={classes.divider} />
             <div className={classes.cardsContainer}>
                 <div className={classes.cardsWrapper}>
                     <ul className={classes.cardsItems}>
                         <CardItem
-                            src="/images/img-8.jpg" label="todo list"
-                            text="TODO リストです"
-                            siteHref="https://google.com"
-                            githubHref="https://google.com"
+                            src="/images/img-8.jpg" label="BBS-ci3"
+                            text="codeigniterで作成したひと言掲示板です！"
+                            siteHref=""
+                            githubHref="https://github.com/igaue-takahiko/BBS-php-ci3"
                         />
                         <CardItem
-                            src="/images/img-8.jpg" label="todo list"
-                            text="TODO リストです"
-                            siteHref="https://google.com"
-                            githubHref="https://google.com"
+                            src="/images/img-8.jpg" label="COVID-19 ダッシュボード"
+                            text="React+Redux+TypeScript+firebaseで作成したコロナダッシュボードです！"
+                            siteHref="https://covid-19-dashboard-83109.web.app/"
+                            githubHref="https://github.com/igaue-takahiko/COVID-19_dashboard"
                         />
                         <CardItem
                             src="/images/my-portfolio.jpeg" label="my portfolio"
@@ -79,15 +70,15 @@ const WorksSection = () => {
                     <ul className={classes.cardsItems}>
                         <CardItem
                             src="/images/img-8.jpg" label="todo list"
-                            text="TODO リストです TODO リストです TODO リストです"
-                            siteHref="https://google.com"
+                            text=""
+                            siteHref=""
                             githubHref=""
                         />
                         <CardItem
-                            src="/images/img-8.jpg" label="todo list"
-                            text="TODO リストです TODO リストです TODO リストです"
-                            siteHref="https://google.com"
-                            githubHref="https://google.com"
+                            src="/images/K2-SHOP.jpeg" label="K2-SHOP"
+                            text="前職の同僚が将来ブランドを立ち上げる時を想定したデモサイトです！React+Redux-saga+firebaseで制作しました！"
+                            siteHref="https://ec-website-79387.web.app/"
+                            githubHref="https://github.com/igaue-takahiko/EC-GraphQL-app"
                         />
                     </ul>
                 </div>

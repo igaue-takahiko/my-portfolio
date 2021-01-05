@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+
 import { PrimaryButton } from './UI-kit';
 
 import "./HeroSection.css"
 
 const HeroSection = () => {
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1800,
+            offset: 0,
+            anchorPlacement: "center-center",
+        })
+    },[])
+
     return (
         <div className="hero-container">
             <video src="/video/video-1.mp4" autoPlay loop muted />

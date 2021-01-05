@@ -28,7 +28,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/about" onClick={closeModalMenu}>
+                            <Link className="header__links" to="/" onClick={closeModalMenu}>
                                 About
                             </Link>
                         </li>
