@@ -2,7 +2,7 @@ import React from 'react';
 import "./App.css"
 import 'aos/dist/aos.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Header, HeroSection, } from "./components";
+import { Header, HeroSection, Footer } from "./components";
 import { AboutSection, WorksSection, SkillsSection } from './components/sections';
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
                 <Route exact path='/skills' component={SkillsSection} />
                 <Route exact path='/works' component={WorksSection} />
             </Switch>
+            <Footer />
         </Router>
         </>
     );

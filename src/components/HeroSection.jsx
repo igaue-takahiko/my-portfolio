@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 
 import { PrimaryButton } from './UI-kit';
-
+import HeroSectionVideo from '../assets/video/video-1.mp4';
 import "./HeroSection.css"
 
 const HeroSection = () => {
@@ -17,7 +17,7 @@ const HeroSection = () => {
 
     return (
         <div className="hero-container">
-            <video src="/video/video-1.mp4" autoPlay loop muted />
+            <video src={HeroSectionVideo} autoPlay loop muted />
             <h1 data-aos="fade-up">Takahiko's portfolio</h1>
             <p data-aos="fade-up">I'm Web Developer</p>
             <div className="module-spacer--medium" />

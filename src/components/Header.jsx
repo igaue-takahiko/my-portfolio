@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 
@@ -13,7 +14,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="header">
+            <header className="header" id="home">
                 <div className="header__container">
                     <Link className="header__logo" to="/" onClick={closeModalMenu}>
                         My Portfolio
@@ -23,9 +24,9 @@ const Header = () => {
                     </div>
                     <ul className={click ? "header__menu active" : "header__menu"}>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <AnchorLink className="header__links" href="#home" offset="3000" onClick={closeModalMenu}>
                                 Home
-                            </Link>
+                            </AnchorLink>
                         </li>
                         <li className="header__item">
                             <Link className="header__links" to="/" onClick={closeModalMenu}>

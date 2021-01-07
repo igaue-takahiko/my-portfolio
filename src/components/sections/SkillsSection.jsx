@@ -2,8 +2,15 @@ import React, { useEffect } from 'react';
 import { makeStyles, Grid, Container, Typography, Divider } from '@material-ui/core';
 import Aos from 'aos';
 
+import HtmlCssJsImage from '../../assets/images/html-css-js.png';
+import PhpImage from '../../assets/images/php-icon.png';
+import TsImage from '../../assets/images/ts-icon.png';
+import ReactImage from '../../assets/images/react-icon.png';
+import ReduxImage from '../../assets/images/redux-icon.png';
+import FirebaseImage from '../../assets/images/firebase-icon.png';
+import CiImage from '../../assets/images/ci-icon.png';
 
-const useStyle = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
     section: {
         padding: "4rem",
         background: "#fff",
@@ -55,7 +62,7 @@ const useStyle = makeStyles(() => ({
 }))
 
 const SkillsSection = () => {
-    const classes = useStyle();
+    const classes = useStyles();
 
     useEffect(() => {
         Aos.init({
@@ -78,7 +85,7 @@ const SkillsSection = () => {
                 <Grid  container alignItems="center" justify="space-around" direction="row" spacing={5}>
                     <Grid item xs={12} md={4} data-aos="fade-up">
                         <div className={classes.imagesAria}>
-                            <img className={classes.images} src="/images/html-css-js.png" alt="プログラミング images"/>
+                            <img className={classes.images} src={HtmlCssJsImage} alt="プログラミング images"/>
                         </div>
                     <p className={classes.imageText}>HTML CSS JS</p>
                     </Grid>
@@ -86,7 +93,7 @@ const SkillsSection = () => {
                     <div className="module-spacer--medium"></div>
                     <div className="module-spacer--medium"></div>
                         <div className={classes.imagesAria}>
-                            <img className={classes.images} src="/images/php-icon.png" alt="プログラミング images"/>
+                            <img className={classes.images} src={PhpImage} alt="プログラミング images"/>
                         </div>
                         <div className="module-spacer--extra-small"></div>
                         <div className="module-spacer--extra-small"></div>
@@ -96,7 +103,7 @@ const SkillsSection = () => {
                     <div className="module-spacer--extra-small"></div>
                     <div className="module-spacer--extra-small"></div>
                         <div className={classes.imagesAria}>
-                            <img className={classes.images} src="/images/ts-icon.png" alt="プログラミング images"/>
+                            <img className={classes.images} src={TsImage} alt="プログラミング images"/>
                         </div>
                         <div className="module-spacer--medium"></div>
                     <p className={classes.imageText}>TypeScript</p>
@@ -113,24 +120,24 @@ const SkillsSection = () => {
                 <Grid  container alignItems="center" justify="space-around" direction="row" spacing={5}>
                     <Grid item xs={12} md={3} data-aos="fade-up">
                         <div className={classes.imagesAria}>
-                            <img className={classes.images} src="/images/react-icon.png" alt="プログラミング images"/>
+                            <img className={classes.images} src={ReactImage} alt="プログラミング images"/>
                         </div>
                         <p className={classes.imageText}>React</p>
                     </Grid>
                     <Grid item xs={12} md={3} data-aos="fade-up">
                         <div className={classes.imagesAria}>
-                            <img className={classes.imageRedux} src="/images/redux-icon.png" alt="プログラミング images"/>
+                            <img className={classes.imageRedux} src={ReduxImage} alt="プログラミング images"/>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={3} data-aos="fade-up">
                         <div className={classes.imagesAria}>
-                            <img className={classes.images} src="/images/firebase-icon.png" alt="プログラミング images"/>
+                            <img className={classes.images} src={FirebaseImage} alt="プログラミング images"/>
                         </div>
                         <p className={classes.imageText}>Firebase</p>
                     </Grid>
                     <Grid item xs={12} md={3} data-aos="fade-up">
                         <div className={classes.imagesAria}>
-                            <img className={classes.image_ci} src="/images/ci-icon.png" alt="プログラミング images"/>
+                            <img className={classes.image_ci} src={CiImage} alt="プログラミング images"/>
                         </div>
                         <p className={classes.imageText}>Codeigniter</p>
                     </Grid>

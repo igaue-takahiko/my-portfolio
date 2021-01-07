@@ -8,6 +8,7 @@ import {
     Avatar
 } from '@material-ui/core';
 import Aos from 'aos';
+import avatar from '../../assets/images/avatar1.png';
 
 const useStyles = makeStyles((theme) => ({
     section: {
@@ -57,7 +58,7 @@ const AboutSection = () => {
                     <Grid item xs={12} md={4} data-aos="fade-right">
                         <Avatar
                             className={classes.avatar}
-                            src="/images/avatar1.png"
+                            src={avatar}
                         />
                         <div className="module-spacer--extra-extra-small" />
                         <div className={classes.text}>
