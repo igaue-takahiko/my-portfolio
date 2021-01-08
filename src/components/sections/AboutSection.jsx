@@ -8,7 +8,7 @@ import {
     Avatar
 } from '@material-ui/core';
 import Aos from 'aos';
-import avatar from '../../assets/images/avatar1.png';
+import TiImage from '../../assets/images/t.i-image.jpeg';
 
 const useStyles = makeStyles((theme) => ({
     section: {
@@ -58,7 +58,7 @@ const AboutSection = () => {
                     <Grid item xs={12} md={4} data-aos="fade-right">
                         <Avatar
                             className={classes.avatar}
-                            src={avatar}
+                            src={TiImage}
                         />
                         <div className="module-spacer--extra-extra-small" />
                         <div className={classes.text}>
@@ -100,7 +100,7 @@ const AboutSection = () => {
                         <Typography variant="body1">
                             プログラミングを学んで思うことは、形が変わっても物づくりが好きだという事です！<br/>
                             今まで携わってきて成長できた飲食、小売業界にプログラミングを通じて<br/>
-                            より良いサービスを作り還元していきたいと思います！<br/>
+                            より良いサービスを作り還元していきたいです！<br/>
                         </Typography>
                         </div>
                     </Grid>

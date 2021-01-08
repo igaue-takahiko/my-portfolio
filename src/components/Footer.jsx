@@ -150,7 +150,8 @@ const Footer = () => {
             body: JSON.stringify(payload)
         }).then(() => {
             setSnackbarInfo({
-                severity: 'success', message: 'お問い合わせありがとうございます。送信完了しました。'
+                severity: 'success',
+                message: 'お問い合わせありがとうございます。送信完了しました。'
             });
             setSnackbarOpen(true);
             setEmail("");

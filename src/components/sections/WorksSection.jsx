@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 
 import { CardItem } from '../UI-kit';
-import SampleImage from '../../assets/images/img-8.jpg';
 import BBSImage from '../../assets/images/BBS-ci3.jpeg';
 import COVID_19DashboardImage from '../../assets/images/COVID-19-dashboard.jpeg';
 import K2ShopImage from '../../assets/images/K2-SHOP.jpeg';
+import SNSImage from '../../assets/images/SNS-app.jpeg';
 import MyPortfolioImage from '../../assets/images/my-portfolio.jpeg';
 
 const useStyles = makeStyles(() => ({
@@ -74,14 +74,14 @@ const WorksSection = () => {
                     </ul>
                     <ul className={classes.cardsItems}>
                         <CardItem
-                            src={SampleImage} label="todo list"
-                            text=""
-                            siteHref=""
-                            githubHref=""
+                            src={SNSImage} label="SNS app"
+                            text="React+Redux+TypeScript+firebaseで制作したSNSアプリです！"
+                            siteHref="https://twitter-app-93221.firebaseapp.com/"
+                            githubHref="https://github.com/igaue-takahiko/twitter-app"
                         />
                         <CardItem
                             src={K2ShopImage} label="K2-SHOP"
-                            text="前職の同僚が将来ブランドを立ち上げる時を想定したデモサイトです！React+Redux-saga+firebaseで制作しました！"
+                            text="前職の同僚が将来ブランドを立ち上げる時を想定したECサイト(デモ)です！React+Redux-saga+firebaseで制作しました！"
                             siteHref="https://ec-website-79387.web.app/"
                             githubHref="https://github.com/igaue-takahiko/EC-GraphQL-app"
                         />

@@ -3,6 +3,7 @@ import { makeStyles, Grid, Container, Typography, Divider } from '@material-ui/c
 import Aos from 'aos';
 
 import HtmlCssJsImage from '../../assets/images/html-css-js.png';
+import SassImage from '../../assets/images/sass-icon.png';
 import PhpImage from '../../assets/images/php-icon.png';
 import TsImage from '../../assets/images/ts-icon.png';
 import ReactImage from '../../assets/images/react-icon.png';
@@ -83,23 +84,29 @@ const SkillsSection = () => {
                 <Divider className={classes.divider_m} />
                 <div className="module-spacer--medium"></div>
                 <Grid  container alignItems="center" justify="space-around" direction="row" spacing={5}>
-                    <Grid item xs={12} md={4} data-aos="fade-up">
+                    <Grid item xs={12} md={3} data-aos="fade-up">
                         <div className={classes.imagesAria}>
                             <img className={classes.images} src={HtmlCssJsImage} alt="プログラミング images"/>
                         </div>
                     <p className={classes.imageText}>HTML CSS JS</p>
                     </Grid>
-                    <Grid item xs={12} md={4} data-aos="fade-up">
+                    <Grid item xs={12} md={3} data-aos="fade-up">
+                        <div className={classes.imagesAria}>
+                            <img className={classes.images} src={SassImage} alt="プログラミング images"/>
+                        </div>
+                        <div className="module-spacer--extra-small"></div>
+                    <p className={classes.imageText}>Sass</p>
+                    </Grid>
+                    <Grid item xs={12} md={3} data-aos="fade-up">
                     <div className="module-spacer--medium"></div>
                     <div className="module-spacer--medium"></div>
                         <div className={classes.imagesAria}>
                             <img className={classes.images} src={PhpImage} alt="プログラミング images"/>
                         </div>
                         <div className="module-spacer--extra-small"></div>
-                        <div className="module-spacer--extra-small"></div>
                         <p className={classes.imageText}>PHP</p>
                     </Grid>
-                    <Grid item xs={12} md={4} data-aos="fade-up">
+                    <Grid item xs={12} md={3} data-aos="fade-up">
                     <div className="module-spacer--extra-small"></div>
                     <div className="module-spacer--extra-small"></div>
                         <div className={classes.imagesAria}>
@@ -109,7 +116,6 @@ const SkillsSection = () => {
                     <p className={classes.imageText}>TypeScript</p>
                     </Grid>
                 </Grid>
-                <div className="module-spacer--medium"></div>
                 <div className="module-spacer--medium"></div>
             </Container>
             <div className="module-spacer--medium"></div>
