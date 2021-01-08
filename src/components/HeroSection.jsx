@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Aos from 'aos';
 
 import { PrimaryButton } from './UI-kit';
@@ -21,9 +22,11 @@ const HeroSection = () => {
             <h1 data-aos="fade-up">Takahiko's portfolio</h1>
             <p data-aos="fade-up">I'm Web Developer</p>
             <div className="module-spacer--medium" />
-            <PrimaryButton
-                label="Contact" dataAos="fade-up"
-            />
+            <AnchorLink style={{ textDecoration: "none" }} href="#contact" offset="50">
+                <PrimaryButton
+                    label="Contact" dataAos="fade-up"
+                />
+            </AnchorLink>
         </div>
     )
 }

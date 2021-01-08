@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
     makeStyles,
     TextField,
@@ -16,7 +16,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import { Alert } from '@material-ui/lab';
 import { grey } from '@material-ui/core/colors';
 
-import { functions } from '../firebase';
+import { WEBHOOK_URL } from '../webhookConfig'
 
 const useStyles = makeStyles((theme) => ({
     footerContainer: {
@@ -88,11 +88,9 @@ const theme = createMuiTheme({
 const Footer = () => {
     const classes = useStyles();
 
-    const [ sendData, setSendData ] = useState({
-        email: "",
-        name: "",
-        content: "",
-    });
+    const [ name, setName ] = useState("");
+    const [ email, setEmail ] = useState("");
+    const [ description, setDescription ] = useState("");
     const [ loading, setLoading ] = useState(false);
     const [ snackbarOpen, setSnackbarOpen ] = useState(false);
     const [ snackbarInfo, setSnackbarInfo ] = useState({
@@ -100,20 +98,64 @@ const Footer = () => {
         message: "",
     });
 
+    const inputDescription = useCallback((event) => {
+        setDescription(event.target.value)
+    },[setDescription]);
+
+    const inputEmail = useCallback((event) => {
+        setEmail(event.target.value)
+    },[setEmail]);
+
+    const inputName = useCallback((event) => {
+        setName(event.target.value)
+    },[setName]);
+
+    const validateEmailFormat = (email) => {
+        const regex = /^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        return regex.test(email)
+    }
+
+    const validateRequiredInput = (...args) => {
+        let isBlank = false;
+        for (let i = 0; i < args.length; i=(i+1)|0) {
+            if (args[i] === "") {
+                isBlank = true;
+            }
+        }
+        return isBlank
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const isBlank = validateRequiredInput(name, email, description)
+        const isValidEmail = validateEmailFormat(email);
         setLoading(true);
 
-        let sendEmail = functions.httpsCallable("sendEmail");
-        sendEmail(sendData).then(() => {
+        if (isBlank) {
+            alert('必須入力欄が空白です。')
+            return false
+        } else if (!isValidEmail) {
+            alert('メールアドレスの書式が異なります。')
+            return false
+        } else {
+            const payload = {
+                text: 'お問い合わせがありました\n'
+                    + 'お名前: ' + name + '\n'
+                    + 'メールアドレス: ' + email + '\n'
+                    + '【問い合わせ内容】\n' + description
+            };
+
+        fetch(WEBHOOK_URL, {
+            method: 'POST',
+            body: JSON.stringify(payload)
+        }).then(() => {
             setSnackbarInfo({
-                severity: "success",
-                message: "お問い合わせありがとうございます。送信完了しました！"
+                severity: 'success', message: 'お問い合わせありがとうございます。送信完了しました。'
             });
             setSnackbarOpen(true);
-            setSendData({
-                email: "", name: "", content: "",
-            });
+            setEmail("");
+            setName("");
+            setDescription("");
         }).catch((error) => {
             setSnackbarInfo({
                 severity: "error",
@@ -124,11 +166,7 @@ const Footer = () => {
         }).finally(() => {
             setLoading(false);
         })
-    };
-
-    const handleChange = e => {
-        setSendData({ ...sendData, [e.target.name]: e.target.value });
-    };
+    }};
 
     const handleSnackBerClose = (event, reason) => {
         if (reason === "clickaway") {
@@ -138,7 +176,7 @@ const Footer = () => {
     };
 
     return (
-        <div className={classes.footerContainer}>
+        <div className={classes.footerContainer} id="contact">
             <h1 className={classes.title}>Contact</h1>
             <Divider className={classes.divider} />
             <div className="module-spacer--medium" />
@@ -152,17 +190,17 @@ const Footer = () => {
                         <TextField
                             className={classes.textField} type="text" label="お名前"
                             required size="small" name="name" fullWidth margin="normal"
-                            value={sendData.name} onChange={handleChange}
+                            value={name} onChange={inputName}
                         />
                         <TextField
                             className={classes.textField} type="email" label="メールアドレス"
                             required size="small" name="email" fullWidth margin="normal"
-                            value={sendData.email} onChange={handleChange}
+                            value={email} onChange={inputEmail}
                         />
                         <TextField
-                            className={classes.textField} label="お問い合わせ内容" margin="normal"
+                            className={classes.textField} label="お問い合わせ内容" margin="normal" type="text"
                             required multiline name="content" rows="8" variant="outlined" fullWidth
-                            value={sendData.content} onChange={handleChange}
+                            value={description} onChange={inputDescription}
                         />
                     </ThemeProvider>
                     <div className="module-spacer--medium" />

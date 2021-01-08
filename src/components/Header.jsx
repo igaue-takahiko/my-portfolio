@@ -25,7 +25,7 @@ const Header = () => {
                     <ul className={click ? "header__menu active" : "header__menu"}>
                         <li className="header__item">
                             <AnchorLink className="header__links" href="#home" offset="3000" onClick={closeModalMenu}>
-                                Home
+                                Top
                             </AnchorLink>
                         </li>
                         <li className="header__item">
