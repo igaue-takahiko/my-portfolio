@@ -11,7 +11,7 @@ const Header = () => {
     const [ click, setClick ] = useState(false);
 
     const handleClick = () => setClick(!click);
-    const closeModalMenu = () =>setClick(false);
+    const closeModalMenu = () => setClick(false);
 
     return (
         <>
