@@ -10,7 +10,7 @@ import {
     CircularProgress,
     Snackbar,
     Typography,
-    IconButton
+    IconButton,
 } from '@material-ui/core';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { Alert } from '@material-ui/lab';
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center"
     },
     formContainer: {
-        width: 380,
         textAlign: "center",
     },
     title: {
@@ -37,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     divider: {
         width: 120,
+        backgroundColor: "#6B6C6B",
         margin: "0 auto",
         color: "#6B6C6B",
         border: "2px solid",

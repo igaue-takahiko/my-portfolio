@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
@@ -10,7 +11,7 @@ const Header = () => {
     const [ click, setClick ] = useState(false);
 
     const handleClick = () => setClick(!click);
-    const closeModalMenu = () => setClick(false);
+    const closeModalMenu = () =>setClick(false);
 
     return (
         <>
@@ -29,19 +30,19 @@ const Header = () => {
                             </AnchorLink>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <HashLink className="header__links" smooth to="/#about" onClick={closeModalMenu}>
                                 About
-                            </Link>
+                            </HashLink>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/skills" onClick={closeModalMenu}>
+                            <HashLink className="header__links" smooth to="/skills#skills" onClick={closeModalMenu}>
                                 Skills
-                            </Link>
+                            </HashLink>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/works" onClick={closeModalMenu}>
+                            <HashLink className="header__links" smooth to="/works#works" onClick={closeModalMenu}>
                                 Works
-                            </Link>
+                            </HashLink>
                         </li>
                     </ul>
                 </div>

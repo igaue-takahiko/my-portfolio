@@ -7,6 +7,7 @@ import {
     Divider,
     Avatar
 } from '@material-ui/core';
+import { HashLink } from 'react-router-hash-link';
 import Aos from 'aos';
 import TiImage from '../../assets/images/t.i-image.jpeg';
 
@@ -18,12 +19,41 @@ const useStyles = makeStyles((theme) => ({
     title: {
         textAlign: "center",
     },
+    subtitle: {
+        '@media (max-width:600px)': {
+            fontSize: '0.95rem',
+        },
+    },
+    subtitle2: {
+        textAlign: "center",
+        "@media screen and (max-width: 950px)": {
+            fontSize: "0.9rem",
+        },
+        "@media screen and (max-width: 812px)": {
+            fontSize: "0.835rem",
+        },
+    },
     divider: {
         width: 100,
+        backgroundColor: "#6B6C6B",
         margin: "0 auto",
         color: "#6B6C6B",
         border: "2px solid",
         borderRadius: "2px"
+    },
+    divider_m: {
+        width: "12.2rem",
+        margin: "0 auto",
+    },
+    divider_l: {
+        width: "19rem",
+        margin: "0 auto",
+        "@media screen and (max-width: 896px)": {
+            width: "13rem",
+        },
+        "@media screen and (max-width: 736px)": {
+            width: "14rem",
+        },
     },
     avatar: {
         width: theme.spacing(27),
@@ -32,7 +62,19 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
         textAlign: "center",
-        marginBottom: theme.spacing(1)
+        marginBottom: theme.spacing(1),
+    },
+    linksContainer: {
+        display: "flex",
+        justifyContent: "space-around",
+    },
+    linkItem: {
+        color: "#6B6C6B",
+        fontSize: "1.6rem",
+        textDecoration: "none",
+        "&:hover": {
+            color: "#06cf6b"
+        }
     }
 }))
 
@@ -48,7 +90,7 @@ const AboutSection = () => {
     },[])
 
     return (
-        <div className={classes.section}>
+        <div className={classes.section} id="about">
             <h1 className={classes.title}>About</h1>
             <Divider className={classes.divider} />
             <div className="module-spacer--medium" />
@@ -64,7 +106,7 @@ const AboutSection = () => {
                         <div className={classes.text}>
                             <Typography variant="subtitle1">伊賀上 尚彦(いがうえ たかひこ)</Typography>
                             <div className="module-spacer--extra-extra-small" />
-                            <Typography variant="body1">
+                            <Typography variant="body2">
                                 1982年10月26日生まれ (現 38歳)<br/>
                                 <br/>
                                 --経歴--<br/>
@@ -81,10 +123,10 @@ const AboutSection = () => {
                     </Grid>
                     <Grid item xs={12} md={4} data-aos="fade-zoom-in">
                     <div className={classes.text}>
-                        <Typography variant="h6" >なせエンジニアを目指すのか？</Typography>
-                        <Divider style={{ width: "280px", margin: "0 auto" }} />
+                        <Typography className={classes.subtitle} variant="h6" >なぜエンジニアを目指すのか？</Typography>
+                        <Divider className={classes.divider_l} />
                         <div className="module-spacer--extra-extra-small" />
-                        <Typography variant="body1">
+                        <Typography variant="body2">
                             今までの人生でいろんな経験をしてきてエンジニアを志す理由は、<br/>
                             『挑戦による価値を見出し、多くの人の役に立ちたい』からです！<br/>
                             出来ないことが出来る様になることは大変ですけど、<br/>
@@ -94,14 +136,23 @@ const AboutSection = () => {
                     </Grid>
                     <Grid item xs={12} md={4} data-aos="fade-left">
                         <div className={classes.text}>
-                        <Typography variant="h6">今後、どういう事に携わりたいか？</Typography>
-                        <Divider style={{ width: "280px", margin: "0 auto" }} />
+                        <Typography className={classes.subtitle2} variant="h6" >今後、どういう事に携わりたいか？</Typography>
+                        <Divider className={classes.divider_l} />
                         <div className="module-spacer--extra-extra-small" />
-                        <Typography variant="body1">
+                        <Typography variant="body2">
                             プログラミングを学んで思うことは、形が変わっても物づくりが好きだという事です！<br/>
                             今まで携わってきて成長できた飲食、小売業界にプログラミングを通じて<br/>
                             より良いサービスを作り還元していきたいです！<br/>
                         </Typography>
+                        </div>
+                        <div className="module-spacer--medium" />
+                        <div className={classes.linksContainer}>
+                            <HashLink className={classes.linkItem} smooth to="/skills#skills">
+                                Skills
+                            </HashLink>
+                            <HashLink className={classes.linkItem} smooth to="/works#works">
+                                Works
+                            </HashLink>
                         </div>
                     </Grid>
                 </Grid>

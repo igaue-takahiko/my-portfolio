@@ -18,6 +18,18 @@ const useStyles = makeStyles(() => ({
     },
     title: {
         textAlign: "center",
+        fontSize: "2.1rem"
+    },
+    subtitle1: {
+        textAlign: "center",
+        fontSize: "1.4rem",
+    },
+    subtitle2: {
+        textAlign: "center",
+        fontSize: "1.4rem",
+        "@media screen and (max-width: 896px)": {
+            fontSize: "1.09rem",
+        }
     },
     imagesAria: {
         textAlign: "center",
@@ -41,24 +53,30 @@ const useStyles = makeStyles(() => ({
     },
     divider: {
         width: 100,
+        backgroundColor: "#6B6C6B",
         margin: "0 auto",
         color: "#6B6C6B",
         border: "2px solid",
         borderRadius: "2px"
     },
     divider_m: {
-        width: 220,
+        width: "12.2rem",
         margin: "0 auto",
+        backgroundColor: "#6B6C6B",
         color: "#6B6C6B",
         border: "1px solid",
         borderRadius: "2px"
     },
     divider_l: {
-        width: 290,
+        width: "18rem",
         margin: "0 auto",
+        backgroundColor: "#6B6C6B",
         color: "#6B6C6B",
         border: "1px solid",
-        borderRadius: "2px"
+        borderRadius: "2px",
+        "@media screen and (max-width: 896px)": {
+            width: "14rem",
+        }
     }
 }))
 
@@ -74,13 +92,13 @@ const SkillsSection = () => {
     },[])
 
     return (
-        <div className={classes.section}>
+        <div className={classes.section} id="skills">
             <h1 className={classes.title}>Skills</h1>
             <Divider className={classes.divider} />
             <div className="module-spacer--medium"></div>
             <div className="module-spacer--medium"></div>
             <Container maxWidth="xl">
-                <Typography className={classes.title} variant="h5">プログラミング言語</Typography>
+                <Typography className={classes.subtitle1} >プログラミング言語</Typography>
                 <Divider className={classes.divider_m} />
                 <div className="module-spacer--medium"></div>
                 <Grid  container alignItems="center" justify="space-around" direction="row" spacing={5}>
@@ -120,7 +138,7 @@ const SkillsSection = () => {
             </Container>
             <div className="module-spacer--medium"></div>
             <Container maxWidth="xl">
-                <Typography className={classes.title} variant="h5">ライブラリ フレームワーク</Typography>
+                <Typography className={classes.subtitle2} >ライブラリ フレームワーク</Typography>
                 <Divider className={classes.divider_l} />
                 <div className="module-spacer--medium"></div>
                 <Grid  container alignItems="center" justify="space-around" direction="row" spacing={5}>

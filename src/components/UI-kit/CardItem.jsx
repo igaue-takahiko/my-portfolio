@@ -86,7 +86,7 @@ const CardItem = (props) => {
 
     return (
         <>
-            <li className={classes.cardItem} data-aos="flip-left">
+            <li className={classes.cardItem} data-aos="fade-up">
                 <div className={classes.cardItemLink}>
                     <figure className={classes.cardItemPicWrap} data-category={props.label}>
                         <img

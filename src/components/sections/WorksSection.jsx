@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
     },
     divider: {
         width: 100,
+        backgroundColor: "#6B6C6B",
         margin: "0 auto",
         color: "#6B6C6B",
         border: "2px solid",
@@ -47,7 +48,7 @@ const WorksSection = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.section}>
+        <div className={classes.section} id="works" >
             <h1 className={classes.title}>Works</h1>
             <Divider className={classes.divider} />
             <div className={classes.cardsContainer}>
